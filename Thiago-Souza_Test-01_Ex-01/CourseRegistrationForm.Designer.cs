@@ -23,48 +23,51 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseRegistrationForm));
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.addBtn = new System.Windows.Forms.Button();
       this.clearBtn = new System.Windows.Forms.Button();
-      this.checkBox4 = new System.Windows.Forms.CheckBox();
-      this.checkBox3 = new System.Windows.Forms.CheckBox();
-      this.checkBox2 = new System.Windows.Forms.CheckBox();
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.gamingCbx = new System.Windows.Forms.CheckBox();
+      this.healthCbx = new System.Windows.Forms.CheckBox();
+      this.gymMembershipCbx = new System.Windows.Forms.CheckBox();
+      this.activityClubCbx = new System.Windows.Forms.CheckBox();
       this.label4 = new System.Windows.Forms.Label();
       this.listBox1 = new System.Windows.Forms.ListBox();
       this.label3 = new System.Windows.Forms.Label();
       this.programNameCbx = new System.Windows.Forms.ComboBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.radioButton3 = new System.Windows.Forms.RadioButton();
-      this.radioButton2 = new System.Windows.Forms.RadioButton();
-      this.radioButton1 = new System.Windows.Forms.RadioButton();
+      this.ptDistanceRad = new System.Windows.Forms.RadioButton();
+      this.ptParttimeRad = new System.Windows.Forms.RadioButton();
+      this.ptFulltimeRad = new System.Windows.Forms.RadioButton();
       this.label1 = new System.Windows.Forms.Label();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
-      this.clarCourseSummaryBtn = new System.Windows.Forms.Button();
+      this.courseSummaryTbx = new System.Windows.Forms.TextBox();
+      this.clearCourseSummaryBtn = new System.Windows.Forms.Button();
       this.registerBtn = new System.Windows.Forms.Button();
       this.exitBtn = new System.Windows.Forms.Button();
       this.label5 = new System.Windows.Forms.Label();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.totalProgramCostTbx = new System.Windows.Forms.TextBox();
       this.studentDetailsComponent = new Thiago_Souza_Test_01_Ex_01.StudentDetails();
       this.groupBox1.SuspendLayout();
+      this.groupBox2.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
       this.groupBox1.Controls.Add(this.addBtn);
       this.groupBox1.Controls.Add(this.clearBtn);
-      this.groupBox1.Controls.Add(this.checkBox4);
-      this.groupBox1.Controls.Add(this.checkBox3);
-      this.groupBox1.Controls.Add(this.checkBox2);
-      this.groupBox1.Controls.Add(this.checkBox1);
+      this.groupBox1.Controls.Add(this.gamingCbx);
+      this.groupBox1.Controls.Add(this.healthCbx);
+      this.groupBox1.Controls.Add(this.gymMembershipCbx);
+      this.groupBox1.Controls.Add(this.activityClubCbx);
       this.groupBox1.Controls.Add(this.label4);
       this.groupBox1.Controls.Add(this.listBox1);
       this.groupBox1.Controls.Add(this.label3);
       this.groupBox1.Controls.Add(this.programNameCbx);
       this.groupBox1.Controls.Add(this.label2);
-      this.groupBox1.Controls.Add(this.radioButton3);
-      this.groupBox1.Controls.Add(this.radioButton2);
-      this.groupBox1.Controls.Add(this.radioButton1);
+      this.groupBox1.Controls.Add(this.ptDistanceRad);
+      this.groupBox1.Controls.Add(this.ptParttimeRad);
+      this.groupBox1.Controls.Add(this.ptFulltimeRad);
       this.groupBox1.Controls.Add(this.label1);
       this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.groupBox1.Location = new System.Drawing.Point(373, 13);
@@ -94,45 +97,49 @@
       this.clearBtn.UseVisualStyleBackColor = true;
       this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
       // 
-      // checkBox4
+      // gamingCbx
       // 
-      this.checkBox4.AutoSize = true;
-      this.checkBox4.Location = new System.Drawing.Point(15, 209);
-      this.checkBox4.Name = "checkBox4";
-      this.checkBox4.Size = new System.Drawing.Size(119, 21);
-      this.checkBox4.TabIndex = 12;
-      this.checkBox4.Text = "Gaming Club";
-      this.checkBox4.UseVisualStyleBackColor = true;
+      this.gamingCbx.AutoSize = true;
+      this.gamingCbx.Location = new System.Drawing.Point(15, 209);
+      this.gamingCbx.Name = "gamingCbx";
+      this.gamingCbx.Size = new System.Drawing.Size(119, 21);
+      this.gamingCbx.TabIndex = 12;
+      this.gamingCbx.Text = "Gaming Club";
+      this.gamingCbx.UseVisualStyleBackColor = true;
+      this.gamingCbx.CheckedChanged += new System.EventHandler(this.gamingCbx_CheckedChanged);
       // 
-      // checkBox3
+      // healthCbx
       // 
-      this.checkBox3.AutoSize = true;
-      this.checkBox3.Location = new System.Drawing.Point(15, 177);
-      this.checkBox3.Name = "checkBox3";
-      this.checkBox3.Size = new System.Drawing.Size(74, 21);
-      this.checkBox3.TabIndex = 11;
-      this.checkBox3.Text = "Health";
-      this.checkBox3.UseVisualStyleBackColor = true;
+      this.healthCbx.AutoSize = true;
+      this.healthCbx.Location = new System.Drawing.Point(15, 177);
+      this.healthCbx.Name = "healthCbx";
+      this.healthCbx.Size = new System.Drawing.Size(74, 21);
+      this.healthCbx.TabIndex = 11;
+      this.healthCbx.Text = "Health";
+      this.healthCbx.UseVisualStyleBackColor = true;
+      this.healthCbx.CheckedChanged += new System.EventHandler(this.healthCbx_CheckedChanged);
       // 
-      // checkBox2
+      // gymMembershipCbx
       // 
-      this.checkBox2.AutoSize = true;
-      this.checkBox2.Location = new System.Drawing.Point(15, 145);
-      this.checkBox2.Name = "checkBox2";
-      this.checkBox2.Size = new System.Drawing.Size(151, 21);
-      this.checkBox2.TabIndex = 10;
-      this.checkBox2.Text = "Gym Membership";
-      this.checkBox2.UseVisualStyleBackColor = true;
+      this.gymMembershipCbx.AutoSize = true;
+      this.gymMembershipCbx.Location = new System.Drawing.Point(15, 145);
+      this.gymMembershipCbx.Name = "gymMembershipCbx";
+      this.gymMembershipCbx.Size = new System.Drawing.Size(151, 21);
+      this.gymMembershipCbx.TabIndex = 10;
+      this.gymMembershipCbx.Text = "Gym Membership";
+      this.gymMembershipCbx.UseVisualStyleBackColor = true;
+      this.gymMembershipCbx.CheckedChanged += new System.EventHandler(this.gymMembershipCbx_CheckedChanged);
       // 
-      // checkBox1
+      // activityClubCbx
       // 
-      this.checkBox1.AutoSize = true;
-      this.checkBox1.Location = new System.Drawing.Point(15, 113);
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.Size = new System.Drawing.Size(116, 21);
-      this.checkBox1.TabIndex = 9;
-      this.checkBox1.Text = "Activity Club";
-      this.checkBox1.UseVisualStyleBackColor = true;
+      this.activityClubCbx.AutoSize = true;
+      this.activityClubCbx.Location = new System.Drawing.Point(15, 113);
+      this.activityClubCbx.Name = "activityClubCbx";
+      this.activityClubCbx.Size = new System.Drawing.Size(116, 21);
+      this.activityClubCbx.TabIndex = 9;
+      this.activityClubCbx.Text = "Activity Club";
+      this.activityClubCbx.UseVisualStyleBackColor = true;
+      this.activityClubCbx.CheckedChanged += new System.EventHandler(this.activityClubCbx_CheckedChanged);
       // 
       // label4
       // 
@@ -187,38 +194,38 @@
       this.label2.TabIndex = 4;
       this.label2.Text = "Program Names:";
       // 
-      // radioButton3
+      // ptDistanceRad
       // 
-      this.radioButton3.AutoSize = true;
-      this.radioButton3.Location = new System.Drawing.Point(400, 22);
-      this.radioButton3.Name = "radioButton3";
-      this.radioButton3.Size = new System.Drawing.Size(89, 21);
-      this.radioButton3.TabIndex = 3;
-      this.radioButton3.TabStop = true;
-      this.radioButton3.Text = "Distance";
-      this.radioButton3.UseVisualStyleBackColor = true;
+      this.ptDistanceRad.AutoSize = true;
+      this.ptDistanceRad.Location = new System.Drawing.Point(400, 22);
+      this.ptDistanceRad.Name = "ptDistanceRad";
+      this.ptDistanceRad.Size = new System.Drawing.Size(89, 21);
+      this.ptDistanceRad.TabIndex = 3;
+      this.ptDistanceRad.TabStop = true;
+      this.ptDistanceRad.Text = "Distance";
+      this.ptDistanceRad.UseVisualStyleBackColor = true;
       // 
-      // radioButton2
+      // ptParttimeRad
       // 
-      this.radioButton2.AutoSize = true;
-      this.radioButton2.Location = new System.Drawing.Point(280, 22);
-      this.radioButton2.Name = "radioButton2";
-      this.radioButton2.Size = new System.Drawing.Size(97, 21);
-      this.radioButton2.TabIndex = 2;
-      this.radioButton2.TabStop = true;
-      this.radioButton2.Text = "Part-Time";
-      this.radioButton2.UseVisualStyleBackColor = true;
+      this.ptParttimeRad.AutoSize = true;
+      this.ptParttimeRad.Location = new System.Drawing.Point(280, 22);
+      this.ptParttimeRad.Name = "ptParttimeRad";
+      this.ptParttimeRad.Size = new System.Drawing.Size(97, 21);
+      this.ptParttimeRad.TabIndex = 2;
+      this.ptParttimeRad.TabStop = true;
+      this.ptParttimeRad.Text = "Part-Time";
+      this.ptParttimeRad.UseVisualStyleBackColor = true;
       // 
-      // radioButton1
+      // ptFulltimeRad
       // 
-      this.radioButton1.AutoSize = true;
-      this.radioButton1.Location = new System.Drawing.Point(168, 22);
-      this.radioButton1.Name = "radioButton1";
-      this.radioButton1.Size = new System.Drawing.Size(93, 21);
-      this.radioButton1.TabIndex = 1;
-      this.radioButton1.TabStop = true;
-      this.radioButton1.Text = "Full-Time";
-      this.radioButton1.UseVisualStyleBackColor = true;
+      this.ptFulltimeRad.AutoSize = true;
+      this.ptFulltimeRad.Location = new System.Drawing.Point(168, 22);
+      this.ptFulltimeRad.Name = "ptFulltimeRad";
+      this.ptFulltimeRad.Size = new System.Drawing.Size(93, 21);
+      this.ptFulltimeRad.TabIndex = 1;
+      this.ptFulltimeRad.TabStop = true;
+      this.ptFulltimeRad.Text = "Full-Time";
+      this.ptFulltimeRad.UseVisualStyleBackColor = true;
       // 
       // label1
       // 
@@ -233,6 +240,7 @@
       // groupBox2
       // 
       this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
+      this.groupBox2.Controls.Add(this.courseSummaryTbx);
       this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.groupBox2.Location = new System.Drawing.Point(13, 297);
       this.groupBox2.Name = "groupBox2";
@@ -241,16 +249,26 @@
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Course Summary:";
       // 
-      // clarCourseSummaryBtn
+      // courseSummaryTbx
       // 
-      this.clarCourseSummaryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.clarCourseSummaryBtn.Location = new System.Drawing.Point(13, 462);
-      this.clarCourseSummaryBtn.Name = "clarCourseSummaryBtn";
-      this.clarCourseSummaryBtn.Size = new System.Drawing.Size(234, 36);
-      this.clarCourseSummaryBtn.TabIndex = 15;
-      this.clarCourseSummaryBtn.Text = "Clear Course Summary";
-      this.clarCourseSummaryBtn.UseVisualStyleBackColor = true;
-      this.clarCourseSummaryBtn.Click += new System.EventHandler(this.clarCourseSummaryBtn_Click);
+      this.courseSummaryTbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.courseSummaryTbx.Location = new System.Drawing.Point(7, 22);
+      this.courseSummaryTbx.Multiline = true;
+      this.courseSummaryTbx.Name = "courseSummaryTbx";
+      this.courseSummaryTbx.Size = new System.Drawing.Size(865, 105);
+      this.courseSummaryTbx.TabIndex = 0;
+      this.courseSummaryTbx.Text = resources.GetString("courseSummaryTbx.Text");
+      // 
+      // clearCourseSummaryBtn
+      // 
+      this.clearCourseSummaryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.clearCourseSummaryBtn.Location = new System.Drawing.Point(13, 462);
+      this.clearCourseSummaryBtn.Name = "clearCourseSummaryBtn";
+      this.clearCourseSummaryBtn.Size = new System.Drawing.Size(234, 36);
+      this.clearCourseSummaryBtn.TabIndex = 15;
+      this.clearCourseSummaryBtn.Text = "Clear Course Summary";
+      this.clearCourseSummaryBtn.UseVisualStyleBackColor = true;
+      this.clearCourseSummaryBtn.Click += new System.EventHandler(this.clearCourseSummaryBtn_Click);
       // 
       // registerBtn
       // 
@@ -284,13 +302,13 @@
       this.label5.TabIndex = 15;
       this.label5.Text = "Total Program Fee (13% HST): ";
       // 
-      // textBox1
+      // totalProgramCostTbx
       // 
-      this.textBox1.Enabled = false;
-      this.textBox1.Location = new System.Drawing.Point(751, 434);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(140, 20);
-      this.textBox1.TabIndex = 18;
+      this.totalProgramCostTbx.Enabled = false;
+      this.totalProgramCostTbx.Location = new System.Drawing.Point(751, 434);
+      this.totalProgramCostTbx.Name = "totalProgramCostTbx";
+      this.totalProgramCostTbx.Size = new System.Drawing.Size(140, 20);
+      this.totalProgramCostTbx.TabIndex = 18;
       // 
       // studentDetailsComponent
       // 
@@ -309,11 +327,11 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(901, 506);
-      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.totalProgramCostTbx);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.exitBtn);
       this.Controls.Add(this.registerBtn);
-      this.Controls.Add(this.clarCourseSummaryBtn);
+      this.Controls.Add(this.clearCourseSummaryBtn);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.studentDetailsComponent);
@@ -321,6 +339,8 @@
       this.Text = "Student Registration System";
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      this.groupBox2.ResumeLayout(false);
+      this.groupBox2.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -331,26 +351,27 @@
     private StudentDetails studentDetailsComponent;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.RadioButton radioButton3;
-    private System.Windows.Forms.RadioButton radioButton2;
-    private System.Windows.Forms.RadioButton radioButton1;
+    private System.Windows.Forms.RadioButton ptDistanceRad;
+    private System.Windows.Forms.RadioButton ptParttimeRad;
+    private System.Windows.Forms.RadioButton ptFulltimeRad;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.ComboBox programNameCbx;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.ListBox listBox1;
     private System.Windows.Forms.Label label4;
-    private System.Windows.Forms.CheckBox checkBox4;
-    private System.Windows.Forms.CheckBox checkBox3;
-    private System.Windows.Forms.CheckBox checkBox2;
-    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.CheckBox gamingCbx;
+    private System.Windows.Forms.CheckBox healthCbx;
+    private System.Windows.Forms.CheckBox gymMembershipCbx;
+    private System.Windows.Forms.CheckBox activityClubCbx;
     private System.Windows.Forms.Button clearBtn;
     private System.Windows.Forms.Button addBtn;
     private System.Windows.Forms.GroupBox groupBox2;
-    private System.Windows.Forms.Button clarCourseSummaryBtn;
+    private System.Windows.Forms.Button clearCourseSummaryBtn;
     private System.Windows.Forms.Button registerBtn;
     private System.Windows.Forms.Button exitBtn;
     private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox totalProgramCostTbx;
+    private System.Windows.Forms.TextBox courseSummaryTbx;
   }
 }
 

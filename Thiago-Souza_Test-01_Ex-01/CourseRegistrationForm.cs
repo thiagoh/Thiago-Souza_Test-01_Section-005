@@ -15,10 +15,14 @@ namespace Thiago_Souza_Test_01_Ex_01 {
     private List<string> mobileCourses = new List<string>();
     private List<string> softwareCourses = new List<string>();
 
-    private static double COURSE_VALUE = 500.0;
+    private static double COURSE_COST = 500.0;
+    private static double CAMPUS_FACILITY_COST = 100.0;
 
     public CourseRegistrationForm() {
       InitializeComponent();
+
+      courseSummaryTbx.Text = "";
+      updateTotalProgramCost();
 
       networkCourses.AddRange(new string[]{
         "C Programming", "Network Fundamentals", "Routers", "Computer Networking", "Network Testing",
@@ -31,24 +35,47 @@ namespace Thiago_Souza_Test_01_Ex_01 {
       });
     }
 
-    private void clarCourseSummaryBtn_Click(object sender, EventArgs e) {
+    private void updateTotalProgramCost() {
+
 
     }
 
-    private void registerBtn_Click(object sender, EventArgs e) {
+    private void setTotalProgramCost(double cost) {
 
+      cost = cost < 0.0 ? 0.0 : cost;
+      cost = cost * 1.13;
+
+      totalProgramCostTbx.Text = "$CAD " + Convert.ToString(Math.Round(cost, 2, MidpointRounding.AwayFromZero));
+    }
+
+    private void registerBtn_Click(object sender, EventArgs e) {
+      updateTotalProgramCost();
     }
 
     private void exitBtn_Click(object sender, EventArgs e) {
 
     }
 
-    private void clearBtn_Click(object sender, EventArgs e) {
+    private void clearCourseSummaryBtn_Click(object sender, EventArgs e) {
 
+      programNameCbx.SelectedIndex = -1;
+
+      ptFulltimeRad.Checked = false;
+      ptParttimeRad.Checked = false;
+      ptDistanceRad.Checked = false;
+
+      activityClubCbx.Checked = false;
+      gymMembershipCbx.Checked = false;
+      healthCbx.Checked = false;
+      gamingCbx.Checked = false;
+    }
+
+    private void clearBtn_Click(object sender, EventArgs e) {
+      updateTotalProgramCost();
     }
 
     private void addBtn_Click(object sender, EventArgs e) {
-
+      updateTotalProgramCost();
     }
 
     private void studentDetailsComponent_Load(object sender, EventArgs e) {
@@ -73,5 +100,22 @@ namespace Thiago_Souza_Test_01_Ex_01 {
         listBox1.Items.AddRange(mobileCourses.ToArray());
       }
     }
+
+    private void gamingCbx_CheckedChanged(object sender, EventArgs e) {
+      updateTotalProgramCost();
+    }
+
+    private void healthCbx_CheckedChanged(object sender, EventArgs e) {
+      updateTotalProgramCost();
+    }
+
+    private void gymMembershipCbx_CheckedChanged(object sender, EventArgs e) {
+      updateTotalProgramCost();
+    }
+
+    private void activityClubCbx_CheckedChanged(object sender, EventArgs e) {
+      updateTotalProgramCost();
+    }
+
   }
 }
