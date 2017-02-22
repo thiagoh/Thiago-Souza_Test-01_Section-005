@@ -24,6 +24,7 @@
     /// </summary>
     private void InitializeComponent() {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.updateStudentDetailsBtn = new System.Windows.Forms.Button();
       this.contactTbx = new System.Windows.Forms.TextBox();
       this.addressTbx = new System.Windows.Forms.TextBox();
       this.nameTbx = new System.Windows.Forms.TextBox();
@@ -32,7 +33,6 @@
       this.label3 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
-      this.updateStudentDetailsBtn = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -54,6 +54,16 @@
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Student Details";
+      // 
+      // updateStudentDetailsBtn
+      // 
+      this.updateStudentDetailsBtn.Location = new System.Drawing.Point(37, 215);
+      this.updateStudentDetailsBtn.Name = "updateStudentDetailsBtn";
+      this.updateStudentDetailsBtn.Size = new System.Drawing.Size(250, 32);
+      this.updateStudentDetailsBtn.TabIndex = 8;
+      this.updateStudentDetailsBtn.Text = "Update Student Details";
+      this.updateStudentDetailsBtn.UseVisualStyleBackColor = true;
+      this.updateStudentDetailsBtn.Click += new System.EventHandler(this.updateStudentDetailsBtn_Click);
       // 
       // contactTbx
       // 
@@ -119,16 +129,6 @@
       this.label1.TabIndex = 0;
       this.label1.Text = "Student ID:";
       // 
-      // updateStudentDetailsBtn
-      // 
-      this.updateStudentDetailsBtn.Location = new System.Drawing.Point(37, 215);
-      this.updateStudentDetailsBtn.Name = "updateStudentDetailsBtn";
-      this.updateStudentDetailsBtn.Size = new System.Drawing.Size(250, 32);
-      this.updateStudentDetailsBtn.TabIndex = 8;
-      this.updateStudentDetailsBtn.Text = "Update Student Details";
-      this.updateStudentDetailsBtn.UseVisualStyleBackColor = true;
-      this.updateStudentDetailsBtn.Click += new System.EventHandler(this.updateStudentDetailsBtn_Click);
-      // 
       // StudentDetails
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +153,6 @@
     private System.Windows.Forms.TextBox contactTbx;
     private System.Windows.Forms.TextBox addressTbx;
     private System.Windows.Forms.TextBox nameTbx;
-    private System.Windows.Forms.Button updateStudentDetailsBtn;
+    public System.Windows.Forms.Button updateStudentDetailsBtn;
   }
 }

@@ -14,6 +14,7 @@ namespace Thiago_Souza_Test_01_Ex_01 {
     private List<string> networkCourses = new List<string>();
     private List<string> mobileCourses = new List<string>();
     private List<string> softwareCourses = new List<string>();
+    private List<string> selectedCourses = new List<string>();
 
     private static double COURSE_COST = 500.0;
     private static double CAMPUS_FACILITY_COST = 100.0;
@@ -21,7 +22,9 @@ namespace Thiago_Souza_Test_01_Ex_01 {
     public CourseRegistrationForm() {
       InitializeComponent();
 
-      courseSummaryTbx.Text = "";
+      studentDetailsComponent.updateStudentDetailsBtn.Click += UpdateStudentDetailsBtn_Click;
+
+      updateCourseSummary();
       updateTotalProgramCost();
 
       networkCourses.AddRange(new string[]{
@@ -35,9 +38,70 @@ namespace Thiago_Souza_Test_01_Ex_01 {
       });
     }
 
+    private void UpdateStudentDetailsBtn_Click(object sender, EventArgs e) {
+      updateTotalProgramCost();
+      updateCourseSummary();
+    }
+
+    private void updateCourseSummary() {
+
+      if (selectedCourses.Count <= 0) {
+        courseSummaryTbx.Text = "";
+        return;
+      }
+
+      string summary = "";
+
+      summary += "Student (#" + studentDetailsComponent.StudentId + "):" + studentDetailsComponent.StudentName;
+      summary += "\r\nStudent Address:" + studentDetailsComponent.StudentAddress;
+      summary += "Student Contact:" + studentDetailsComponent.StudentContact;
+
+      summary += "\r\n\r\nCourses:";
+      for (int i = 0; i < selectedCourses.Count; i++) {
+        if (i > 0) {
+          summary += ", ";
+        }
+        summary += selectedCourses[i];
+      }
+
+      summary += "\r\nFacilities:";
+
+      if (activityClubCbx.Checked) {
+        summary += "Activity Club ";
+      }
+      if (gymMembershipCbx.Checked) {
+        summary += "Gym Memebership ";
+      }
+      if (healthCbx.Checked) {
+        summary += "Health ";
+      }
+      if (gamingCbx.Checked) {
+        summary += "Gaming Club";
+      }
+
+      courseSummaryTbx.Text = summary;
+    }
+
     private void updateTotalProgramCost() {
 
+      double cost = 0;
 
+      cost += selectedCourses.Count * COURSE_COST;
+
+      if (activityClubCbx.Checked) {
+        cost += CAMPUS_FACILITY_COST;
+      }
+      if (healthCbx.Checked) {
+        cost += CAMPUS_FACILITY_COST;
+      }
+      if (gymMembershipCbx.Checked) {
+        cost += CAMPUS_FACILITY_COST;
+      }
+      if (gamingCbx.Checked) {
+        cost += CAMPUS_FACILITY_COST;
+      }
+
+      setTotalProgramCost(cost);
     }
 
     private void setTotalProgramCost(double cost) {
@@ -49,16 +113,35 @@ namespace Thiago_Souza_Test_01_Ex_01 {
     }
 
     private void registerBtn_Click(object sender, EventArgs e) {
-      updateTotalProgramCost();
+
+      if (programNameCbx.SelectedItem == null) {
+        MessageBox.Show("No program selected! Please select a program!", "No program selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+      }
+
+      var item = (programNameCbx.SelectedItem as string).Trim();
+
+      MessageBox.Show("Thanks for Registering for the Program " + item, "You are registered to the program", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void exitBtn_Click(object sender, EventArgs e) {
-
+      CourseRegistrationForm.ActiveForm.Close();
     }
 
     private void clearCourseSummaryBtn_Click(object sender, EventArgs e) {
 
+      clearProgramDetails();
+      selectedCourses.Clear();
+      courseSummaryTbx.Text = "";
+
+      updateTotalProgramCost();
+      updateCourseSummary();
+    }
+
+    private void clearProgramDetails() {
       programNameCbx.SelectedIndex = -1;
+
+      listBox1.Items.Clear();
 
       ptFulltimeRad.Checked = false;
       ptParttimeRad.Checked = false;
@@ -71,15 +154,26 @@ namespace Thiago_Souza_Test_01_Ex_01 {
     }
 
     private void clearBtn_Click(object sender, EventArgs e) {
+      clearProgramDetails();
       updateTotalProgramCost();
+      updateCourseSummary();
     }
 
     private void addBtn_Click(object sender, EventArgs e) {
+
+      selectedCourses.Clear();
+
+      foreach (var item in listBox1.SelectedItems) {
+        selectedCourses.Add(item as string);
+      }
+
       updateTotalProgramCost();
+      updateCourseSummary();
     }
 
     private void studentDetailsComponent_Load(object sender, EventArgs e) {
-
+      updateTotalProgramCost();
+      updateCourseSummary();
     }
 
     private void programNameCbx_SelectedIndexChanged(object sender, EventArgs e) {
@@ -103,18 +197,22 @@ namespace Thiago_Souza_Test_01_Ex_01 {
 
     private void gamingCbx_CheckedChanged(object sender, EventArgs e) {
       updateTotalProgramCost();
+      updateCourseSummary();
     }
 
     private void healthCbx_CheckedChanged(object sender, EventArgs e) {
       updateTotalProgramCost();
+      updateCourseSummary();
     }
 
     private void gymMembershipCbx_CheckedChanged(object sender, EventArgs e) {
       updateTotalProgramCost();
+      updateCourseSummary();
     }
 
     private void activityClubCbx_CheckedChanged(object sender, EventArgs e) {
       updateTotalProgramCost();
+      updateCourseSummary();
     }
 
   }

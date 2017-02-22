@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace Thiago_Souza_Test_01_Ex_01 {
   public partial class StudentDetails : UserControl {
 
+
+
     public string StudentId {
       get {
         return studentIdTbx.Text;
@@ -53,7 +55,6 @@ namespace Thiago_Souza_Test_01_Ex_01 {
     }
 
     private void updateStudentDetailsBtn_Click(object sender, EventArgs e) {
-      MessageBox.Show("working!");
     }
   }
 }
