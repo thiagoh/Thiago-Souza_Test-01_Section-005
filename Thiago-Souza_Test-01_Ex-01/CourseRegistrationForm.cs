@@ -50,36 +50,42 @@ namespace Thiago_Souza_Test_01_Ex_01 {
         return;
       }
 
-      string summary = "";
+      try {
 
-      summary += "Student (#" + studentDetailsComponent.StudentId + "):" + studentDetailsComponent.StudentName;
-      summary += "\r\nStudent Address:" + studentDetailsComponent.StudentAddress;
-      summary += "Student Contact:" + studentDetailsComponent.StudentContact;
+        string summary = "";
 
-      summary += "\r\n\r\nCourses:";
-      for (int i = 0; i < selectedCourses.Count; i++) {
-        if (i > 0) {
-          summary += ", ";
+        summary += "Student (#" + studentDetailsComponent.StudentId + "): " + studentDetailsComponent.StudentName;
+        summary += " \r\nAddress:" + studentDetailsComponent.StudentAddress;
+        summary += " Contact:" + studentDetailsComponent.StudentContact;
+
+        summary += "\r\n\r\nCourses:";
+        for (int i = 0; i < selectedCourses.Count; i++) {
+          if (i > 0) {
+            summary += ", ";
+          }
+          summary += selectedCourses[i];
         }
-        summary += selectedCourses[i];
-      }
 
-      summary += "\r\nFacilities:";
+        summary += "\r\nFacilities:";
 
-      if (activityClubCbx.Checked) {
-        summary += "Activity Club ";
-      }
-      if (gymMembershipCbx.Checked) {
-        summary += "Gym Memebership ";
-      }
-      if (healthCbx.Checked) {
-        summary += "Health ";
-      }
-      if (gamingCbx.Checked) {
-        summary += "Gaming Club";
-      }
+        if (activityClubCbx.Checked) {
+          summary += "Activity Club ";
+        }
+        if (gymMembershipCbx.Checked) {
+          summary += "Gym Memebership ";
+        }
+        if (healthCbx.Checked) {
+          summary += "Health ";
+        }
+        if (gamingCbx.Checked) {
+          summary += "Gaming Club";
+        }
 
-      courseSummaryTbx.Text = summary;
+        courseSummaryTbx.Text = summary;
+
+      } catch (Exception ex) {
+        courseSummaryTbx.Text = ex.Message;
+      }
     }
 
     private void updateTotalProgramCost() {
