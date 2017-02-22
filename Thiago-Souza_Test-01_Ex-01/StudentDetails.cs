@@ -20,7 +20,7 @@ namespace Thiago_Souza_Test_01_Ex_01 {
       }
     }
 
-    public string Name {
+    public string StudentName {
       get {
         return nameTbx.Text;
       }
@@ -29,7 +29,7 @@ namespace Thiago_Souza_Test_01_Ex_01 {
       }
     }
 
-    public string Address {
+    public string StudentAddress {
       get {
         return addressTbx.Text;
       }
@@ -38,7 +38,7 @@ namespace Thiago_Souza_Test_01_Ex_01 {
       }
     }
 
-    public string Contact {
+    public string StudentContact {
       get {
         return contactTbx.Text;
       }

@@ -23,7 +23,6 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      this.studentDetailsComponent = new Thiago_Souza_Test_01_Ex_01.StudentDetails();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.addBtn = new System.Windows.Forms.Button();
       this.clearBtn = new System.Windows.Forms.Button();
@@ -34,7 +33,7 @@
       this.label4 = new System.Windows.Forms.Label();
       this.listBox1 = new System.Windows.Forms.ListBox();
       this.label3 = new System.Windows.Forms.Label();
-      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.programNameCbx = new System.Windows.Forms.ComboBox();
       this.label2 = new System.Windows.Forms.Label();
       this.radioButton3 = new System.Windows.Forms.RadioButton();
       this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -46,15 +45,9 @@
       this.exitBtn = new System.Windows.Forms.Button();
       this.label5 = new System.Windows.Forms.Label();
       this.textBox1 = new System.Windows.Forms.TextBox();
+      this.studentDetailsComponent = new Thiago_Souza_Test_01_Ex_01.StudentDetails();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // studentDetailsComponent
-      // 
-      this.studentDetailsComponent.Location = new System.Drawing.Point(13, 13);
-      this.studentDetailsComponent.Name = "studentDetailsComponent";
-      this.studentDetailsComponent.Size = new System.Drawing.Size(331, 277);
-      this.studentDetailsComponent.TabIndex = 0;
       // 
       // groupBox1
       // 
@@ -67,7 +60,7 @@
       this.groupBox1.Controls.Add(this.label4);
       this.groupBox1.Controls.Add(this.listBox1);
       this.groupBox1.Controls.Add(this.label3);
-      this.groupBox1.Controls.Add(this.comboBox1);
+      this.groupBox1.Controls.Add(this.programNameCbx);
       this.groupBox1.Controls.Add(this.label2);
       this.groupBox1.Controls.Add(this.radioButton3);
       this.groupBox1.Controls.Add(this.radioButton2);
@@ -157,6 +150,7 @@
       this.listBox1.ItemHeight = 16;
       this.listBox1.Location = new System.Drawing.Point(364, 79);
       this.listBox1.Name = "listBox1";
+      this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
       this.listBox1.Size = new System.Drawing.Size(125, 180);
       this.listBox1.TabIndex = 7;
       // 
@@ -170,13 +164,18 @@
       this.label3.TabIndex = 6;
       this.label3.Text = "List of Courses:";
       // 
-      // comboBox1
+      // programNameCbx
       // 
-      this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.Location = new System.Drawing.Point(168, 52);
-      this.comboBox1.Name = "comboBox1";
-      this.comboBox1.Size = new System.Drawing.Size(174, 24);
-      this.comboBox1.TabIndex = 5;
+      this.programNameCbx.FormattingEnabled = true;
+      this.programNameCbx.Items.AddRange(new object[] {
+            "Network",
+            "Mobile",
+            "Software"});
+      this.programNameCbx.Location = new System.Drawing.Point(168, 52);
+      this.programNameCbx.Name = "programNameCbx";
+      this.programNameCbx.Size = new System.Drawing.Size(174, 24);
+      this.programNameCbx.TabIndex = 5;
+      this.programNameCbx.SelectedIndexChanged += new System.EventHandler(this.programNameCbx_SelectedIndexChanged);
       // 
       // label2
       // 
@@ -293,6 +292,18 @@
       this.textBox1.Size = new System.Drawing.Size(140, 20);
       this.textBox1.TabIndex = 18;
       // 
+      // studentDetailsComponent
+      // 
+      this.studentDetailsComponent.Location = new System.Drawing.Point(13, 13);
+      this.studentDetailsComponent.Name = "studentDetailsComponent";
+      this.studentDetailsComponent.Size = new System.Drawing.Size(331, 277);
+      this.studentDetailsComponent.StudentAddress = "";
+      this.studentDetailsComponent.StudentContact = "";
+      this.studentDetailsComponent.StudentId = "";
+      this.studentDetailsComponent.StudentName = "";
+      this.studentDetailsComponent.TabIndex = 0;
+      this.studentDetailsComponent.Load += new System.EventHandler(this.studentDetailsComponent_Load);
+      // 
       // CourseRegistrationForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,7 +335,7 @@
     private System.Windows.Forms.RadioButton radioButton2;
     private System.Windows.Forms.RadioButton radioButton1;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.ComboBox programNameCbx;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.ListBox listBox1;
     private System.Windows.Forms.Label label4;
